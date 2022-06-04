@@ -8,6 +8,7 @@ const donorSchema = new Schema({
   },
   bloodGroup: {
     type: 'string',
+    enum: ['A', 'B', 'AB', 'O'],
     required: [true, 'blood group is required'],
     trim: true,
   },
@@ -15,4 +16,4 @@ const donorSchema = new Schema({
 
 const Donor = model('Donor', donorSchema);
 
-module.exports = { Donor, donorSchema };
+module.exports = Donor;

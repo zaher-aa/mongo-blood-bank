@@ -8,6 +8,7 @@ const patientSchema = new Schema({
   },
   bloodGroup: {
     type: 'string',
+    enum: ['A', 'B', 'AB', 'O'],
     required: [true, 'blood group is required'],
     trim: true,
   },
