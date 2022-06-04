@@ -16,12 +16,18 @@ const bloodBankSchema = new Schema({
     required: true,
     trim: true,
   },
-  donors: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Donor',
-    },
-  ],
+  donors: {
+    type: [
+      {
+        donorId: {
+          type: 'string',
+          ref: 'Donor',
+          required: true,
+        },
+      },
+    ],
+    default: [],
+  },
 });
 
 module.exports = model('BloodBank', bloodBankSchema);

@@ -13,4 +13,6 @@ const donorSchema = new Schema({
   },
 });
 
-module.exports = model('Donor', donorSchema);
+const Donor = model('Donor', donorSchema);
+
+module.exports = { Donor, donorSchema };
